@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đọc truyện tranh online</title>
-    <link href="/proj-truyentranh/assets/vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <!-- Nhúng file Quản lý các Liên kết CSS dùng chung cho toàn bộ trang web -->
+    <?php include_once(__DIR__ . '/layouts/styles.php'); ?>
 </head>
 <body>
 
@@ -66,6 +67,7 @@ EOT;
 
 
     <main role="main">
+        <!-- Block content -->
         <div class="alert alert-danger text-center" role="alert">
         <a href="">Web tổng hợp truyện trinh thám và tiểu thuyết</a>
         </div>
@@ -77,7 +79,7 @@ EOT;
                     <?php foreach($dataDanhSachTieuThuyet as $tieuthuyet) : ?>
                         <div class="col">
                             <div class="card" style="width: 18rem;">
-                                <img src="<?= $tieuthuyet['truyen_hinhdaidien'] ?>" class="card-img-top" alt="...">
+                                <img src="/proj-truyentranh/assets/uploads/products/<?= $tieuthuyet['truyen_hinhdaidien'] ?>" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $tieuthuyet['truyen_ten'] ?></h5>
                                     <p class="card-text"><?= $tieuthuyet['truyen_motangan'] ?></p>
@@ -96,7 +98,7 @@ EOT;
                     <?php foreach($dataDanhSachTruyenTranh as $truyentranh) : ?>
                         <div class="col">
                             <div class="card" style="width: 18rem;">
-                                <img src="<?= $truyentranh['truyen_hinhdaidien'] ?>" class="card-img-top" alt="...">
+                                <img src="/proj-truyentranh/assets/uploads/products/<?= $truyentranh['truyen_hinhdaidien'] ?>" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $truyentranh['truyen_ten'] ?></h5>
                                     <p class="card-text"><?= $truyentranh['truyen_motangan'] ?></p>
@@ -107,10 +109,13 @@ EOT;
                     <?php endforeach ;?>               
             </div>
         </div>
+        <!-- End block content -->
     </main>
 
-    <script src="/proj-truyentranh/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="/proj-truyentranh/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Nhúng file quản lý phần SCRIPT JAVASCRIPT -->
+    <?php include_once(__DIR__ . '/layouts/scripts.php'); ?>
+
+    <!-- Các file Javascript sử dụng riêng cho trang này, liên kết tại đây -->
 
 </body>
 </html>

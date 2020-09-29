@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đọc truyện tranh tiểu thuyết online</title>
-    <link href="/proj-truyentranh/assets/vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <!-- Nhúng file Quản lý các Liên kết CSS dùng chung cho toàn bộ trang web -->
+    <?php include_once(__DIR__ . '/../layouts/styles.php'); ?>
 </head>
 <body>
     
@@ -86,7 +87,7 @@
     <h3>Thông tin</h3>
         <div class="row" style="border: 1px solid green; margin-left: 10px; margin-right: 10px;">
             <div class="col-md-4">
-                <img src="<?= $truyentranhRow['truyen_hinhdaidien'] ?>" class="img-fluid"/>
+                <img src="/proj-truyentranh/assets/uploads/products/<?= $truyentranhRow['truyen_hinhdaidien'] ?>" class="img-fluid"/>
                 <p><b>Tác giả:</b> <?= $truyentranhRow['truyen_tacgia'] ?></p>
                 <p><b>Thể loại:</b> <?= $truyentranhRow['truyen_theloai'] ?></p>
                 <p><b>Ngày đăng truyện:</b> <?= $truyentranhRow['truyen_ngaydang'] ?></p>
@@ -120,7 +121,9 @@
     <!-- End block content -->
 </main>
 
-    <script src="/proj-truyentranh/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="/proj-truyentranh/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Nhúng file quản lý phần SCRIPT JAVASCRIPT -->
+    <?php include_once(__DIR__ . '/../layouts/scripts.php'); ?>
+
+    <!-- Các file Javascript sử dụng riêng cho trang này, liên kết tại đây -->
 </body>
 </html>
